@@ -1,0 +1,17 @@
+# Local .terraform folder (don't upload plugins/modules)
+.terraform/
+
+# Local state files (Terraform Cloud will handle the state now)
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform variables (if you create a .tfvars file with secrets)
+*.tfvars
+*.tfvars.json
+
+# Visual/Temp files
+grafico.dot
+mi_grafico.svg
