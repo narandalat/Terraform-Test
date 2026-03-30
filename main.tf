@@ -13,3 +13,10 @@ module "database" {
   source = "./modules/rds"
   vpc_id = module.network.vpc_id # Así conectás un módulo con otro
 }
+
+module "compute" {
+  source             = "./modules/ec2"
+  security_group_id  = module.network.web_sg_id # Esto conecta el sg.tf con la instancia
+  key_name          = var.key_name             # La variable que ya tenés en Terraform Cloud
+}
+  # ... otras variables
