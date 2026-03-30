@@ -9,3 +9,13 @@ resource "aws_instance" "public_instance" {
   user_data = file("${path.module}/scripts/userdata.sh")
   # ... resto de la config
 }
+
+# modules/ec2/main.tf
+
+# ... (lo que ya tenés: resource "aws_instance" "public_instance") ...
+
+# La IP Elástica (EIP)
+resource "aws_eip" "static_ip" {
+  instance = aws_instance.public_instance.id
+  domain   = "vpc"
+}
