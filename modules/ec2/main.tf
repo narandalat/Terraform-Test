@@ -19,3 +19,9 @@ resource "aws_eip" "static_ip" {
   instance = aws_instance.public_instance.id
   domain   = "vpc"
 }
+
+module "compute" {
+  source             = "./modules/ec2"
+  security_group_id  = module.network.web_sg_id # Esto conecta el sg.tf con la instancia
+  # ... otras variables
+}
