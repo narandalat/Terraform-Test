@@ -21,6 +21,7 @@ resource "aws_instance" "public_instance" {
   key_name      = data.aws_key_pair.key.key_name
   user_data     = file("${path.module}/scripts/userdata.sh")
   vpc_security_group_ids = [var.security_group_id]
+  subnet_id     = var.subnet_id
   tags = {
     Name = "svc.miprueba.com.ar"
   }
