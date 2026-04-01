@@ -8,3 +8,8 @@ variable "key_name" {
   description = "Nombre de la Key Pair para SSH"
   type        = string
 }
+
+variable "subnet_id" {
+  description = "ID de la subnet donde se creará la instancia"
+  type        = string
+}
