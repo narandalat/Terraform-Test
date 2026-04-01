@@ -17,7 +17,7 @@ data "aws_key_pair" "key" {
 # 3. Creamos la instancia
 resource "aws_instance" "public_instance" {
   ami           = data.aws_ami.ubuntu.id 
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   key_name      = data.aws_key_pair.key.key_name
   user_data     = file("${path.module}/scripts/userdata.sh")
   vpc_security_group_ids = [var.security_group_id]
