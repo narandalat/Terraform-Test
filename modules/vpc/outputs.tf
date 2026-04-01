@@ -7,5 +7,5 @@ output "web_sg_id" {
 }
 
 output "public_subnet_id" {
-  value = aws_subnet.public.id  # OJO: asegurate que 'public' sea el nombre de tu recurso subnet
+  value = aws_subnet.public_subnet.id
 }
